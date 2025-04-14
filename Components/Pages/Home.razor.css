@@ -1,0 +1,60 @@
+
+.side-display{
+    flex-grow: 1;
+    height: 100%;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.file-upload{
+    height: 50vh;
+   background-color: purple;
+   width: 100%;
+}
+table, th, td{
+    border: 2px solid;
+}
+table{
+    height: 100%;
+}
+.map{
+    width: 500px;
+    border: 10px dashed black;
+    border-radius: 10px;
+    background-color: palegreen;
+    
+}
+
+.main{
+    display: flex ;
+}
+.container{
+    margin: 10px;
+    padding: 20px;
+    background-color: aquamarine;
+    border: 10px solid black;
+    border-radius: 10px;
+    
+}
+.data{
+    margin-inline: 10px;
+    height: 100%;
+    overflow-y: auto;
+    
+}
+.data-display{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    background-color: red
+    
+}
+#map {
+    width: 500px;
+    border: 10px dashed black;
+    border-radius: 10px;
+    background-color: palegreen;
+}

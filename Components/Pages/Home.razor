@@ -1,0 +1,245 @@
+﻿@page "/"
+@rendermode InteractiveServer
+@inject IJSRuntime JS
+
+<div class="main">
+    <div id="map" >
+        <div @ref = "myElement"></div>
+    </div>
+    <div class="side-display">
+        <div class="container file-upload">
+            <p>Upload your csv file here</p>
+            <InputFile OnChange="@Upload"/>
+           
+            <p>File Name: @FileName</p>
+            <p>File Size: @FileSize</p>
+            <p>File Type: @FileType</p>
+            <p>Last Modified: @LastModified</p>
+        </div>
+        <div class="container data-display">
+            <div class="data">
+                    <table>
+                    <thead>
+                        <th>Reader ID</th>
+                        <th>Number of Interactions</th>
+                    </thead>
+                    <tbody>
+                    @if(sortedReaders != null){
+                        @foreach(List<ReaderEvent> sortedReader in sortedReaders ){
+                            <tr>
+                                <td>@sortedReader[0].devid@sortedReader[0].machine</td>
+                                <td>@sortedReader.Count</td>
+                            </tr>
+                            
+                        }
+                    }
+                    </tbody>
+                </table>
+            </div>
+            <div class="data">
+                    <table>
+                    <thead>
+                        <th>Panel ID</th>
+                        <th>Number of Interactions</th>
+                    </thead>
+                    <tbody>
+                    @if(sortedPanels != null){
+                        @foreach(List<ReaderEvent> sortedPanel in sortedPanels ){
+                            <tr>
+                                <td>@sortedPanel[0].devid</td>
+                                <td>@sortedPanel.Count</td>
+                            </tr>
+                            
+                        }
+                    }
+                    </tbody>
+                </table>
+            </div>
+            <div class="data">
+                    <table>
+                    <thead>
+                        <th>User ID</th>
+                        <th>Number of Interactions</th>
+                    </thead>
+                    <tbody>
+                    @if(sortedUsers != null){
+                        @foreach(List<ReaderEvent> sortedUser in sortedUsers ){
+                            <tr>
+                                <td>@sortedUser[0].idhash</td>
+                                <td>@sortedUser.Count</td>
+                            </tr>
+                            
+                        }
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@code{
+
+    public string FileName { get; set; } = "";
+    public long FileSize { get; set; }
+    public string FileType { get; set; } = "";
+    public DateTimeOffset LastModified { get; set; }
+    const int MAX_FILESIZE = 5000 * 1024;
+    public List<ReaderEvent> readerEvents = new List<ReaderEvent>();
+    Dictionary<string, List<ReaderEvent>> eventDictionary = new Dictionary<string,List<ReaderEvent>>();
+    Dictionary<string, List<ReaderEvent>> panelDictionary = new Dictionary<string,List<ReaderEvent>>();
+    Dictionary<string, List<ReaderEvent>> userDictionary = new Dictionary<string,List<ReaderEvent>>();
+
+
+    public List<ReaderEvent>[]? sortedReaders;
+    public List<ReaderEvent>[]? sortedPanels;
+    public List<ReaderEvent>[]? sortedUsers;
+    public string error = "";
+    private static ElementReference myElement;
+    protected override async Task OnAfterRenderAsync(bool firstRender){
+        if(firstRender){
+             await JS.InvokeVoidAsync("createMap", 35.600291735954535, -97.6397232404786, 17);
+             await JS.InvokeVoidAsync("addPin", 35.600291735954535, -97.6397232404786);
+        }
+    }
+    public async Task Upload(InputFileChangeEventArgs e){
+       error = "Readers sorted?";
+        await FileUploaded(e);
+        
+        await Task.Run(csvReader);
+        populateReaderDictionary(readerEvents);
+        populatePanelDictionary(readerEvents);
+        populateUserDictionary(readerEvents);
+        sortedReaders = sortDictionaryByCount(eventDictionary);
+        sortedPanels = sortDictionaryByCount(panelDictionary);
+        sortedUsers = sortDictionaryByCount(userDictionary);
+        StateHasChanged();
+    }
+    public async Task FileUploaded(InputFileChangeEventArgs e){
+        
+        var browserFile = e.File;
+        if(browserFile != null){
+            Console.WriteLine("File is not null");
+             FileSize = browserFile.Size;
+            FileType = browserFile.ContentType;
+            FileName = browserFile.Name;
+            LastModified = browserFile.LastModified;
+            StateHasChanged();
+            
+
+            try{
+                
+                 var fileStream = browserFile.OpenReadStream(MAX_FILESIZE);
+                 var destinationStream = new FileStream(FileName, FileMode.Create);
+                await fileStream.CopyToAsync(destinationStream);
+                destinationStream.Close();
+            }catch(Exception exception){
+                Console.WriteLine(exception);
+            }
+        }
+
+    }
+    public List<ReaderEvent>[] sortDictionaryByCount(Dictionary<string, List< ReaderEvent>> dictionary){
+       List<ReaderEvent>[] unorderedReader = new List<ReaderEvent>[dictionary.Count];
+        List<ReaderEvent> t = new List<ReaderEvent>();
+       // List<ReaderEvent>[] orderedReaders = new List<ReaderEvent>[eventDictionary.Count];
+       
+        int index = 0;
+        foreach(KeyValuePair<string, List<ReaderEvent>> readerEvent in dictionary){
+            unorderedReader[index] = readerEvent.Value;
+            index++;
+        }
+        
+        for(int i = 0; i < unorderedReader.Length; i++){
+             for (int j = i + 1; j < unorderedReader.Length; j++) {
+                if (unorderedReader[j].Count > unorderedReader[i].Count) {
+                    t = unorderedReader[i];
+                    unorderedReader[i] = unorderedReader[j];
+                    unorderedReader[j] = t;
+                }
+            }
+        }
+        return unorderedReader;
+       
+    }
+     
+    public void csvReader(){
+            try
+            {
+                StreamReader sr = new StreamReader(FileName);
+                sr.ReadLine();
+                string? line = sr.ReadLine();
+               // List<String> words = new List<string>();
+                
+                while (line != null)
+                {
+                    string[] words = line.Split(",");
+                    ReaderEvent tempEvent = new ReaderEvent(words[0], words[1], words[2], words[3], words[4], words[5]);
+                    readerEvents.Add(tempEvent);
+                    line = sr.ReadLine();
+                }
+                
+              
+            }catch(Exception exception){
+                Console.WriteLine(exception);
+            }
+           
+            
+    }
+    
+    public void populateReaderDictionary(List<ReaderEvent> readerList){
+            
+            foreach(ReaderEvent readerEvent in readerList){
+                if (!eventDictionary.ContainsKey(readerEvent.devid + readerEvent.machine)){
+                    List<ReaderEvent> events = new List<ReaderEvent>();
+                    events.Add(readerEvent);
+                    eventDictionary.Add(readerEvent.devid +readerEvent.machine, events);
+                }else{
+                    eventDictionary[readerEvent.devid + readerEvent.machine].Add(readerEvent);
+                }
+            }
+            
+        }
+        public void populatePanelDictionary(List<ReaderEvent> readerList){
+            
+            foreach(ReaderEvent readerEvent in readerList){
+                if (!panelDictionary.ContainsKey(readerEvent.devid)){
+                    List<ReaderEvent> events = new List<ReaderEvent>();
+                    events.Add(readerEvent);
+                    panelDictionary.Add(readerEvent.devid, events);
+                }else{
+                    panelDictionary[readerEvent.devid].Add(readerEvent);
+                }
+            }
+            
+        }
+        public void populateUserDictionary(List<ReaderEvent> readerList){
+            
+            foreach(ReaderEvent readerEvent in readerList){
+                if (!userDictionary.ContainsKey(readerEvent.idhash)){
+                    List<ReaderEvent> events = new List<ReaderEvent>();
+                    events.Add(readerEvent);
+                    userDictionary.Add(readerEvent.idhash, events);
+                }else{
+                    userDictionary[readerEvent.idhash].Add(readerEvent);
+                }
+            }
+            
+        }
+        
+    public class ReaderEvent{
+        public ReaderEvent(string time, string location, string readerDescription, string idhash, string devid, string machine){
+            this.time = time;
+            this.location = location;
+            this.readerDescription = readerDescription;
+            this.idhash = idhash;
+            this.devid = devid;
+            this.machine = machine;
+        }
+        public string time;
+        public string location;
+        public string readerDescription;
+        public string idhash;
+        public string devid;
+        public string machine;
+    }
+}
