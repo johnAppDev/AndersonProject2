@@ -304,4 +304,5 @@
 /Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/scopedcss/Components/CustomMap.razor.rz.scp.css
 /Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/46misyigar-scvwip9zz3.gz
 /Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/jqn4k2gw2y-scvwip9zz3.gz
-/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/gfnu4srxt2-utddthojlw.gz
+/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/AndersonProject.sourcelink.json
+/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/gfnu4srxt2-bg6po9ynul.gz

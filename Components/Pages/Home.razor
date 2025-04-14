@@ -98,7 +98,7 @@
     protected override async Task OnAfterRenderAsync(bool firstRender){
         if(firstRender){
              await JS.InvokeVoidAsync("createMap", 35.600291735954535, -97.6397232404786, 17);
-             await JS.InvokeVoidAsync("addPin", 35.600291735954535, -97.6397232404786);
+             //await JS.InvokeVoidAsync("addPin", 35.600291735954535, -97.6397232404786);
         }
     }
     public async Task Upload(InputFileChangeEventArgs e){
