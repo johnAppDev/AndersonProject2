@@ -3,8 +3,10 @@
 @inject IJSRuntime JS
 
 <div class="main">
-    <div id="map" >
-        <div @ref = "myElement"></div>
+    <div class="mapHolder" >
+        <input @onchange="setRadius"/>
+        <div id = "map"></div>
+        
     </div>
     <div class="side-display">
         <div class="container file-upload">
@@ -225,6 +227,8 @@
             }
             
         }
+        private async Task setRadius(ChangeEventArgs e) => 
+            await JS.InvokeVoidAsync("setRadius", e.Value);
         
     public class ReaderEvent{
         public ReaderEvent(string time, string location, string readerDescription, string idhash, string devid, string machine){

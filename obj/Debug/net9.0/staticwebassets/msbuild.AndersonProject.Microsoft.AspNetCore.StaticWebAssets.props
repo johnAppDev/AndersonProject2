@@ -1,22 +1,22 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AndersonProject.scvwip9zz3.bundle.scp.css'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AndersonProject.f0a6qurogj.bundle.scp.css'))">
       <SourceType>Package</SourceType>
       <SourceId>AndersonProject</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AndersonProject</BasePath>
-      <RelativePath>AndersonProject.scvwip9zz3.bundle.scp.css</RelativePath>
+      <RelativePath>AndersonProject.f0a6qurogj.bundle.scp.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>Reference</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ProjectBundle</AssetTraitValue>
-      <Fingerprint>scvwip9zz3</Fingerprint>
-      <Integrity>RPMXVxxfEOWiK3Ec1KRTYcNVxA5cDSRl2Kq73enllwM=</Integrity>
+      <Fingerprint>f0a6qurogj</Fingerprint>
+      <Integrity>L7omLQ7OIOUrbrmV8Njg1WtB8FdPpTa+3JEsO2SHwjM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AndersonProject.scvwip9zz3.bundle.scp.css'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AndersonProject.f0a6qurogj.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))">
       <SourceType>Package</SourceType>
@@ -858,8 +858,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>bg6po9ynul</Fingerprint>
-      <Integrity>FVed7gJqJKvqCtgKzXEKCRwULlMLm+dxqg2WJQyXyPs=</Integrity>
+      <Fingerprint>5z5b2de0d5</Fingerprint>
+      <Integrity>/5Y2UP+4Jrz6vsmq/md5Whu8vxpGaQyQtdvZBlkCJ5A=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\map.js'))</OriginalItemSpec>
