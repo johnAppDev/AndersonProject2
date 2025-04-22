@@ -24,6 +24,10 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/Components/Pages/Calendar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DYWxlbmRhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -35,10 +39,6 @@ build_metadata.AdditionalFiles.CssScope =
 [/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9fSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/Components/CustomMap.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9DdXN0b21NYXAucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-y9pdo68v96
 
 [/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTWFpbkxheW91dC5yYXpvcg==

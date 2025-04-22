@@ -301,8 +301,7 @@
 /Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/awup78ll1e-5rz14127ly.gz
 /Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/9zslhy3vwt-50qfip8jkl.gz
 /Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/Anderson.6061F3B0.Up2Date
-/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/scopedcss/Components/CustomMap.razor.rz.scp.css
 /Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/AndersonProject.sourcelink.json
 /Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/gfnu4srxt2-5z5b2de0d5.gz
-/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/46misyigar-f0a6qurogj.gz
-/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/jqn4k2gw2y-f0a6qurogj.gz
+/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/46misyigar-57mjsmfqr9.gz
+/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/jqn4k2gw2y-57mjsmfqr9.gz
