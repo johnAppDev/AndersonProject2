@@ -5,19 +5,15 @@
 <div class="main">
     <div class="mapHolder" >
         <input @onchange="setRadius"/>
+        <button @onclick="toggleEditing">Toggle Editing</button>
         <div id = "map"></div>
+        <button>Save Panel and Reader configuration</button>
         
     </div>
     <div class="side-display">
         <div class="container file-upload">
-            <p>Upload your csv file here</p>
             <InputFile OnChange="@Upload"/>
-           
-            <p>File Name: @FileName</p>
-            <p>File Size: @FileSize</p>
-            <p>File Type: @FileType</p>
-            <p>Last Modified: @LastModified</p>
-            
+            <Calendar @ref="calendar"/>
         </div>
         <div class="container data-display">
             <div class="data">
@@ -32,6 +28,25 @@
                             <tr>
                                 <td>@sortedReader[0].devid@sortedReader[0].machine</td>
                                 <td>@sortedReader.Count</td>
+                            </tr>
+                            
+                        }
+                    }
+                    </tbody>
+                </table>
+            </div>
+            <div class="data">
+                    <table>
+                    <thead>
+                        <th>Date</th>
+                        <th>Number of Interactions</th>
+                    </thead>
+                    <tbody>
+                    @if(sortedTimes != null){
+                        @foreach(List<ReaderEvent> sortedTime in sortedTimes ){
+                            <tr>
+                                <td>@sortedTime[0].time</td>
+                                <td>@sortedTime.Count</td>
                             </tr>
                             
                         }
@@ -81,7 +96,7 @@
     </div>
 </div>
 @code{
-
+    Calendar calendar;
     public string FileName { get; set; } = "";
     public long FileSize { get; set; }
     public string FileType { get; set; } = "";
@@ -91,11 +106,12 @@
     Dictionary<string, List<ReaderEvent>> eventDictionary = new Dictionary<string,List<ReaderEvent>>();
     Dictionary<string, List<ReaderEvent>> panelDictionary = new Dictionary<string,List<ReaderEvent>>();
     Dictionary<string, List<ReaderEvent>> userDictionary = new Dictionary<string,List<ReaderEvent>>();
-
+    Dictionary<string, List<ReaderEvent>> timeDictionary = new Dictionary<string, List<ReaderEvent>>();
 
     public List<ReaderEvent>[]? sortedReaders;
     public List<ReaderEvent>[]? sortedPanels;
     public List<ReaderEvent>[]? sortedUsers;
+    public List<ReaderEvent>[]? sortedTimes;
     public string error = "";
     private static ElementReference myElement;
     protected override async Task OnAfterRenderAsync(bool firstRender){
@@ -112,9 +128,14 @@
         populateReaderDictionary(readerEvents);
         populatePanelDictionary(readerEvents);
         populateUserDictionary(readerEvents);
+        
         sortedReaders = sortDictionaryByCount(eventDictionary);
         sortedPanels = sortDictionaryByCount(panelDictionary);
         sortedUsers = sortDictionaryByCount(userDictionary);
+        populateTimeDictionary(readerEvents);
+        sortedTimes = sortDictionaryByCount(timeDictionary);
+        calendar.DateDictionary = timeDictionary;
+        calendar.MostInteractions =sortedTimes[0].Count;
         StateHasChanged();
     }
     public async Task FileUploaded(InputFileChangeEventArgs e){
@@ -202,6 +223,20 @@
             }
             
         }
+         public void populateTimeDictionary(List<ReaderEvent> readerList){
+            
+            foreach(ReaderEvent readerEvent in readerList){
+                string date = DateTime.Parse(readerEvent.time).ToShortDateString();
+                if (!timeDictionary.ContainsKey(date)){
+                    List<ReaderEvent> events = new List<ReaderEvent>();
+                    events.Add(readerEvent);
+                    timeDictionary.Add(date, events);
+                }else{
+                    timeDictionary[date].Add(readerEvent);
+                }
+            }
+            
+        }
         public void populatePanelDictionary(List<ReaderEvent> readerList){
             
             foreach(ReaderEvent readerEvent in readerList){
@@ -230,6 +265,8 @@
         }
         private async Task setRadius(ChangeEventArgs e) => 
             await JS.InvokeVoidAsync("setRadius", e.Value);
+        private async Task toggleEditing()=>
+            await JS.InvokeVoidAsync("toggleEditing");
         
     public class ReaderEvent{
         public ReaderEvent(string time, string location, string readerDescription, string idhash, string devid, string machine){

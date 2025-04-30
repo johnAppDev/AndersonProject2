@@ -1,0 +1,124 @@
+@using static AndersonProject.Components.Pages.Home
+@rendermode InteractiveServer
+<div>
+    <h1>@month,@year</h1>
+    <table style="background-color: white; border 3px solid black;">
+        <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(int i = 0; i < 6; i++){
+                <tr>
+                    @for(int j = 7 * i; j < 7*i + 7; j++  ){
+                        if(currentMonth[j].Day ==0){
+                            <td></td>
+                        }else{
+                            int colorModifier = 255 - 255*(int)currentMonth[j].NumOfEvents/(mostInteractions+ 1);
+                            <td style="background-color: rgb(255, @colorModifier,255);">@currentMonth[j].Day</td>
+                        }
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button @onclick="getPreviousMonth">Back</button>
+    <button @onclick="getNextMonth">Next</button>
+</div>
+@code{
+    CalendarDay[] currentMonth;
+    int mostInteractions = 0;
+    public int MostInteractions{
+        get{return mostInteractions;}
+        set{mostInteractions = value;}
+    }
+    int year;
+    int month;
+    private Dictionary<string, List<ReaderEvent>>? dateDictionary;
+    public Dictionary<string, List<ReaderEvent>> DateDictionary
+        {
+            get{return dateDictionary;}
+            set{
+                dateDictionary = value;
+                renderMonth(year, month);
+                StateHasChanged();
+                }
+        }
+    public void getPreviousMonth(){
+    if(month> 1){
+        month -= 1;
+    }else{
+        month = 12;
+        year -=1;
+    }
+    renderMonth(year, month);
+   }
+   public void getNextMonth(){
+    if(month<12){
+        month += 1;
+    }else{
+        month = 1;
+        year +=1;
+    }
+    renderMonth(year, month);
+   }
+    protected override void OnInitialized(){
+        year = 2025;
+        month = 4;
+       renderMonth(year, month);
+    }
+    void renderMonth(int year, int month){
+       
+        currentMonth = new CalendarDay[42];
+        int firstDay = GetFirstDay(year, month);
+        int days = DateTime.DaysInMonth(year,month);
+        for(int i = 0; i< currentMonth.Length; i++){
+            string dateKey = "";
+            int dayNum;
+            if(i < firstDay){
+                dayNum  = 0;
+            }else if(i >= firstDay+days){
+                dayNum = 0;
+            }else{
+                 dayNum = i- firstDay + 1;  
+            }
+            if(dayNum != 0){
+            dateKey = new DateTime(year, month, dayNum).ToShortDateString();
+            }
+            if(dateDictionary!= null && dateDictionary.ContainsKey(dateKey) == true){
+                currentMonth[i] = new CalendarDay(dayNum, dateDictionary[dateKey].Count);
+            }else{
+                currentMonth[i] = new CalendarDay(dayNum);
+            }
+        }
+    }
+    public static int GetFirstDay(int year, int month)
+    {
+        return (int)(new DateTime(year, month, 1 ).DayOfWeek);
+    }
+    public class CalendarDay{
+        int day;
+        int numOfEvents;
+        public int Day{
+            get{return day;}
+        }
+        public int NumOfEvents{
+            get{return numOfEvents;}
+        }
+            public CalendarDay(int day){
+                this.day = day;
+            }
+            public CalendarDay(int day, int numOfEvents){
+                this.day = day;
+                this.numOfEvents = numOfEvents;
+            }
+
+    }
+}

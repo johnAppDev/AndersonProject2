@@ -24,8 +24,8 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/Components/Pages/Calendar.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DYWxlbmRhci5yYXpvcg==
+[/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/Components/Calendar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9DYWxlbmRhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/Components/Pages/Error.razor]

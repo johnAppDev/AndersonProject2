@@ -1,22 +1,22 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AndersonProject.57mjsmfqr9.bundle.scp.css'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AndersonProject.y5zn4d6e1q.bundle.scp.css'))">
       <SourceType>Package</SourceType>
       <SourceId>AndersonProject</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AndersonProject</BasePath>
-      <RelativePath>AndersonProject.57mjsmfqr9.bundle.scp.css</RelativePath>
+      <RelativePath>AndersonProject.y5zn4d6e1q.bundle.scp.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>Reference</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ProjectBundle</AssetTraitValue>
-      <Fingerprint>57mjsmfqr9</Fingerprint>
-      <Integrity>3+TGM33EaIr4CrUmzY8cm0HZvzS4RB26V176GExGxl0=</Integrity>
+      <Fingerprint>y5zn4d6e1q</Fingerprint>
+      <Integrity>xskcfJkYmOcGLvpHl0QHterRz5llJGj2Hup+cLbokWA=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AndersonProject.57mjsmfqr9.bundle.scp.css'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AndersonProject.y5zn4d6e1q.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))">
       <SourceType>Package</SourceType>
@@ -858,8 +858,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>5z5b2de0d5</Fingerprint>
-      <Integrity>/5Y2UP+4Jrz6vsmq/md5Whu8vxpGaQyQtdvZBlkCJ5A=</Integrity>
+      <Fingerprint>cuxestz2cb</Fingerprint>
+      <Integrity>1IIwrVKKJddsjCFGPCjo1/NXF0qkjf9YzTdpl6O0rlY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\map.js'))</OriginalItemSpec>

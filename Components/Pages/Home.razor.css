@@ -9,6 +9,8 @@
 }
 
 .file-upload{
+    display: flex;
+    flex-direction: row;
     height: 50vh;
    background-color: purple;
    width: 100%;

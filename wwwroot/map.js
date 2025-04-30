@@ -1,6 +1,7 @@
 var map
 var markersGroup
 var radius = 5;
+var editing = false;
 function createMap(lat, long, zoom){
      map = L.map('map').setView([lat, long], zoom);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -10,16 +11,23 @@ function createMap(lat, long, zoom){
     markersGroup = L.layerGroup();
     map.addLayer(markersGroup);
     map.on('click', function(e){
-        L.circle( e.latlng, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: radius
-        }).addTo(markersGroup);
+        if(editing)
+        {
+           var circle = L.circle( e.latlng, {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5,
+                radius: radius
+            }).addTo(markersGroup);
+            circle.bindPopup("<input/>").openPopup();
+        }
         return;
     });
 
 }
 function setRadius(newRadius){
     radius = newRadius;
+}
+function  toggleEditing(){
+    editing = !editing;
 }

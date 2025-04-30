@@ -111,6 +111,8 @@ main[b-9u07jejw9z] {
 }
 
 .file-upload[b-6kaq7eao5j]{
+    display: flex;
+    flex-direction: row;
     height: 50vh;
    background-color: purple;
    width: 100%;
