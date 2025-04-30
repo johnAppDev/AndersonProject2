@@ -16,19 +16,25 @@ function createMap(lat, long, zoom){
     map.on('click', function(e){
         if(editing)
         {
-           var circle = L.circle( e.latlng, {
-                draggable: 'true',
-                color: 'red',
-                fillColor: '#f03',
-                fillOpacity: 0.5,
-                radius: radius
-            }).addTo(markersGroup);
-            circle.bindPopup("Index: " +i).openPopup();
-            i = i+1;
+            if(massPlace){
+                
+            }else{
+                var circle = L.circle( e.latlng, {
+                    draggable: 'true',
+                    color: 'red',
+                    fillColor: '#f03',
+                    fillOpacity: 0.5,
+                    radius: radius
+                }).addTo(markersGroup);
+                circle.bindPopup("Location: "+ e.latlng).openPopup();
+                i = i+1;
             //Circle 
-            circle.on('click', function(){
-                map.removeLayer(circle);
-            })
+                circle.on('click', function(){
+                    map.removeLayer(circle);
+                });
+            }
+          
+            
         }
         return;
     });
@@ -40,4 +46,15 @@ function setRadius(newRadius){
 }
 function  toggleEditing(){
     editing = !editing;
+}
+function massPlace(e, id){
+    var circle = L.circle( e.latlng, {
+        draggable: 'true',
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: radius
+    }).addTo(markersGroup);
+    circle.bindPopup("Index: " +i +", "+id).openPopup();
+    i = i+1;
 }

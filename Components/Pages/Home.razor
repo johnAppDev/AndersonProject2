@@ -19,8 +19,16 @@
                 
                 <h2>@contextTitle</h2>
                 <ul class="data">
+
                     @foreach(List<ReaderEvent> readerEventList in processedEventInfo){
-                        <li>@readerEventList[0].readerDescription: @readerEventList.Count</li>
+                        switch(type){
+                            case 1:
+                                <li>@readerEventList[0].idhash: @readerEventList.Count</li>
+                                break;
+                            case 2:
+                                <li>@readerEventList[0].readerDescription: @readerEventList.Count</li>
+                                break;
+                        }
                     }
                 </ul>
                 <div class="data advanced-context">
@@ -75,25 +83,6 @@
             <div class="data">
                     <table>
                     <thead>
-                        <th>Date</th>
-                        <th>Number of Interactions</th>
-                    </thead>
-                    <tbody>
-                    @if(sortedTimes != null){
-                        @foreach(List<ReaderEvent> sortedTime in sortedTimes ){
-                            <tr>
-                                <td>@sortedTime[0].time</td>
-                                <td>@sortedTime.Count</td>
-                            </tr>
-                            
-                        }
-                    }
-                    </tbody>
-                </table>
-            </div>
-            <div class="data">
-                    <table>
-                    <thead>
                         <th>Panel ID</th>
                         <th>Number of Interactions</th>
                     </thead>
@@ -135,6 +124,7 @@
 </div>
 @code{
     Calendar calendar;
+    public int type;
     public string FileName { get; set; } = "";
     public long FileSize { get; set; }
     public string FileType { get; set; } = "";
@@ -168,7 +158,10 @@
                                                                             where readerEvent.machine.Equals(unprocessedEventInfo[0].machine)
                                                                             select readerEvent;
                 Dictionary<string, List<ReaderEvent>> uniqueIDDictionary = populateUserDictionary(uniqueIds.ToList<ReaderEvent>());
+                Dictionary<string, List<ReaderEvent>> uniqueDateDictionary = populateTimeDictionary(uniqueIds.ToList<ReaderEvent>());
                 processedEventInfo = sortDictionaryByCount(uniqueIDDictionary);
+                calendar.DateDictionary = uniqueDateDictionary;
+                calendar.MostInteractions = sortDictionaryByCount(uniqueDateDictionary)[0].Count;
             
         }
         public void displayUserInfo(){
@@ -226,10 +219,12 @@
     }
     public void displayEvent(List<ReaderEvent> readerEvent, int type){
         unprocessedEventInfo = readerEvent;
+        this.type = type;
         switch(type){
             case 1: 
                 displayReaderInfo();
                 contextTitle = unprocessedEventInfo[0].readerDescription;
+                
                 break;
             case 2:
                 contextTitle = unprocessedEventInfo[0].idhash;
