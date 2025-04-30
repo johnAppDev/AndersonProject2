@@ -14,11 +14,13 @@
         <div class="container file-upload">
             <InputFile OnChange="@Upload"/>
             <Calendar @ref="calendar"/>
-            @if(eventInfo != null){
-                <h2>@eventInfo[0].readerDescription</h2>
+            @if(unprocessedEventInfo != null){
+               
+                
+                <h2>@contextTitle</h2>
                 <ul class="data">
-                    @foreach(ReaderEvent readerEvent in eventInfo){
-                        <li>@readerEvent.idhash</li>
+                    @foreach(List<ReaderEvent> readerEventList in processedEventInfo){
+                        <li>@readerEventList[0].readerDescription: @readerEventList.Count</li>
                     }
                 </ul>
                 
@@ -36,7 +38,7 @@
                     @if(sortedReaders != null){
                         @foreach(List<ReaderEvent> sortedReader in sortedReaders ){
                             <tr>
-                                <td><button @onclick="() => displayEvent(sortedReader)">@sortedReader[0].devid@sortedReader[0].machine</button></td>
+                                <td><button @onclick="() => displayEvent(sortedReader, 1)">@sortedReader[0].devid@sortedReader[0].machine</button></td>
                                 <td>@sortedReader.Count</td>
                             </tr>
                             
@@ -93,7 +95,8 @@
                     @if(sortedUsers != null){
                         @foreach(List<ReaderEvent> sortedUser in sortedUsers ){
                             <tr>
-                                <td>@sortedUser[0].idhash</td>
+                                   <td><button @onclick="() => displayEvent(sortedUser, 2)">@sortedUser[0].idhash</button></td>
+                        
                                 <td>@sortedUser.Count</td>
                             </tr>
                             
@@ -111,7 +114,9 @@
     public long FileSize { get; set; }
     public string FileType { get; set; } = "";
     public DateTimeOffset LastModified { get; set; }
-    public List<ReaderEvent> eventInfo;
+    public List<ReaderEvent> unprocessedEventInfo;
+    public List<ReaderEvent>[] processedEventInfo;
+    public string contextTitle = "";
     const int MAX_FILESIZE = 5000 * 1024;
     public List<ReaderEvent> readerEvents = new List<ReaderEvent>();
     Dictionary<string, List<ReaderEvent>> eventDictionary = new Dictionary<string,List<ReaderEvent>>();
@@ -131,14 +136,31 @@
              //await JS.InvokeVoidAsync("addPin", 35.600291735954535, -97.6397232404786);
         }
     }
+    public void displayReaderInfo(){
+        
+               IEnumerable<ReaderEvent> uniqueIds = from readerEvent in readerEvents
+                                                                            where readerEvent.devid.Equals(unprocessedEventInfo[0].devid)
+                                                                            where readerEvent.machine.Equals(unprocessedEventInfo[0].machine)
+                                                                            select readerEvent;
+                Dictionary<string, List<ReaderEvent>> uniqueIDDictionary = populateUserDictionary(uniqueIds.ToList<ReaderEvent>());
+                processedEventInfo = sortDictionaryByCount(uniqueIDDictionary);
+            
+        }
+        public void displayUserInfo(){
+              IEnumerable<ReaderEvent> uniqueIds = from readerEvent in readerEvents
+                                                                            where readerEvent.idhash.Equals(unprocessedEventInfo[0].idhash)
+                                                                            select readerEvent;
+                Dictionary<string, List<ReaderEvent>> uniqueReaderDictionary = populateReaderDictionary(uniqueIds.ToList<ReaderEvent>());
+                processedEventInfo = sortDictionaryByCount(uniqueReaderDictionary);
+        }
     public async Task Upload(InputFileChangeEventArgs e){
        error = "Readers sorted?";
         await FileUploaded(e);
         
         await Task.Run(csvReader);
-        populateReaderDictionary(readerEvents);
+        eventDictionary= populateReaderDictionary(readerEvents);
         populatePanelDictionary(readerEvents);
-        populateUserDictionary(readerEvents);
+        userDictionary = populateUserDictionary(readerEvents);
         
         sortedReaders = sortDictionaryByCount(eventDictionary);
         sortedPanels = sortDictionaryByCount(panelDictionary);
@@ -173,8 +195,19 @@
         }
 
     }
-    public void displayEvent(List<ReaderEvent> readerEvent){
-        eventInfo = readerEvent;
+    public void displayEvent(List<ReaderEvent> readerEvent, int type){
+        unprocessedEventInfo = readerEvent;
+        switch(type){
+            case 1: 
+                displayReaderInfo();
+                contextTitle = unprocessedEventInfo[0].readerDescription;
+                break;
+            case 2:
+                contextTitle = unprocessedEventInfo[0].idhash;
+                displayUserInfo();
+                //display User Info
+                break;
+        }
         StateHasChanged();
     }
     public List<ReaderEvent>[] sortDictionaryByCount(Dictionary<string, List< ReaderEvent>> dictionary){
@@ -225,7 +258,8 @@
             
     }
     
-    public void populateReaderDictionary(List<ReaderEvent> readerList){
+    public Dictionary<string, List<ReaderEvent>> populateReaderDictionary(List<ReaderEvent> readerList){
+            Dictionary<string, List<ReaderEvent>> eventDictionary = new Dictionary<string, List<ReaderEvent>>();
             
             foreach(ReaderEvent readerEvent in readerList){
                 if (!eventDictionary.ContainsKey(readerEvent.devid + readerEvent.machine)){
@@ -236,6 +270,7 @@
                     eventDictionary[readerEvent.devid + readerEvent.machine].Add(readerEvent);
                 }
             }
+            return eventDictionary;
             
         }
          public void populateTimeDictionary(List<ReaderEvent> readerList){
@@ -265,8 +300,8 @@
             }
             
         }
-        public void populateUserDictionary(List<ReaderEvent> readerList){
-            
+        public Dictionary<string, List<ReaderEvent>> populateUserDictionary(List<ReaderEvent> readerList){
+            Dictionary<string, List<ReaderEvent>> userDictionary = new Dictionary<string, List<ReaderEvent>>();
             foreach(ReaderEvent readerEvent in readerList){
                 if (!userDictionary.ContainsKey(readerEvent.idhash)){
                     List<ReaderEvent> events = new List<ReaderEvent>();
@@ -276,6 +311,7 @@
                     userDictionary[readerEvent.idhash].Add(readerEvent);
                 }
             }
+            return userDictionary;
             
         }
         private async Task setRadius(ChangeEventArgs e) => 

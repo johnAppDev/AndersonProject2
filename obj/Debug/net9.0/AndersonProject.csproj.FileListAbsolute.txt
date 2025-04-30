@@ -302,9 +302,6 @@
 /Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/9zslhy3vwt-50qfip8jkl.gz
 /Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/Anderson.6061F3B0.Up2Date
 /Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/AndersonProject.sourcelink.json
-/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/46misyigar-y5zn4d6e1q.gz
-/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/jqn4k2gw2y-y5zn4d6e1q.gz
-/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/gfnu4srxt2-cuxestz2cb.gz
 /Users/coltenroberts/Desktop/Developer /AndersonProject2/bin/Debug/net9.0/appsettings.Development.json
 /Users/coltenroberts/Desktop/Developer /AndersonProject2/bin/Debug/net9.0/appsettings.json
 /Users/coltenroberts/Desktop/Developer /AndersonProject2/bin/Debug/net9.0/AndersonProject.staticwebassets.runtime.json
@@ -532,3 +529,6 @@
 /Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-of9eo4nqnc.gz
 /Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/46misyigar-yboeih48pi.gz
 /Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/jqn4k2gw2y-yboeih48pi.gz
+/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/gfnu4srxt2-of9eo4nqnc.gz
+/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/46misyigar-yboeih48pi.gz
+/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/Debug/net9.0/compressed/jqn4k2gw2y-yboeih48pi.gz
