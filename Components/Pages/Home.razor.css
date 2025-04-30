@@ -48,6 +48,9 @@ table{
     overflow-y: auto;
     
 }
+.advanced-context{
+    font-size: 8px;
+}
 .data-display{
     width: 100%;
     display: flex;

@@ -48,6 +48,9 @@ table[b-6kaq7eao5j]{
     overflow-y: auto;
     
 }
+.advanced-context[b-6kaq7eao5j]{
+    font-size: 8px;
+}
 .data-display[b-6kaq7eao5j]{
     width: 100%;
     display: flex;

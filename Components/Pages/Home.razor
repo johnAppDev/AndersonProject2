@@ -23,7 +23,32 @@
                         <li>@readerEventList[0].readerDescription: @readerEventList.Count</li>
                     }
                 </ul>
-                
+                <div class="data advanced-context">
+                    <table>
+                        <thead>
+                            <th>Time</th>
+                            <th>Location</th>
+                            <th>Description</th>
+                            <th>ID</th>
+                            <th>DEVID</th>
+                            <th>Machine</th>
+                        
+                        </thead>
+                        <tbody>
+                            @foreach(ReaderEvent readerEvent in unprocessedEventInfo){
+                                
+                                <tr>
+                                <td>@DateTime.Parse(readerEvent.time).ToShortDateString()</td>
+                                <td>@readerEvent.location</td>
+                                <td>@readerEvent.readerDescription</td>
+                                <td>@readerEvent.idhash</td>
+                                <td>@readerEvent.devid</td>
+                                <td>@readerEvent.machine</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
 
             }
         </div>
@@ -151,7 +176,11 @@
                                                                             where readerEvent.idhash.Equals(unprocessedEventInfo[0].idhash)
                                                                             select readerEvent;
                 Dictionary<string, List<ReaderEvent>> uniqueReaderDictionary = populateReaderDictionary(uniqueIds.ToList<ReaderEvent>());
+                Dictionary<string, List<ReaderEvent>> uniqueDateDictionary = populateTimeDictionary(uniqueIds.ToList<ReaderEvent>());
                 processedEventInfo = sortDictionaryByCount(uniqueReaderDictionary);
+                
+                calendar.DateDictionary = uniqueDateDictionary;
+                calendar.MostInteractions = sortDictionaryByCount(uniqueDateDictionary)[0].Count;
         }
     public async Task Upload(InputFileChangeEventArgs e){
        error = "Readers sorted?";
@@ -165,7 +194,7 @@
         sortedReaders = sortDictionaryByCount(eventDictionary);
         sortedPanels = sortDictionaryByCount(panelDictionary);
         sortedUsers = sortDictionaryByCount(userDictionary);
-        populateTimeDictionary(readerEvents);
+        timeDictionary = populateTimeDictionary(readerEvents);
         sortedTimes = sortDictionaryByCount(timeDictionary);
         calendar.DateDictionary = timeDictionary;
         calendar.MostInteractions =sortedTimes[0].Count;
@@ -273,8 +302,8 @@
             return eventDictionary;
             
         }
-         public void populateTimeDictionary(List<ReaderEvent> readerList){
-            
+         public  Dictionary<string, List<ReaderEvent>> populateTimeDictionary(List<ReaderEvent> readerList){
+            Dictionary<string, List<ReaderEvent>> timeDictionary = new Dictionary<string, List<ReaderEvent>>();
             foreach(ReaderEvent readerEvent in readerList){
                 string date = DateTime.Parse(readerEvent.time).ToShortDateString();
                 if (!timeDictionary.ContainsKey(date)){
@@ -285,6 +314,7 @@
                     timeDictionary[date].Add(readerEvent);
                 }
             }
+            return timeDictionary;
             
         }
         public void populatePanelDictionary(List<ReaderEvent> readerList){
