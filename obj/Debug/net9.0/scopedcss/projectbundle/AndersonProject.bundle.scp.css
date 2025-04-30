@@ -106,14 +106,13 @@ main[b-9u07jejw9z] {
     height: 100%;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     padding: 10px;
 }
 
 .file-upload[b-6kaq7eao5j]{
     display: flex;
-    flex-direction: row;
-    height: 50vh;
+    flex-direction: column;
    background-color: purple;
    width: 100%;
 }
@@ -121,10 +120,12 @@ table[b-6kaq7eao5j], th[b-6kaq7eao5j], td[b-6kaq7eao5j]{
     border: 2px solid;
 }
 table[b-6kaq7eao5j]{
+    margin: 10px;
     height: 100%;
+    width: 500px;
 }
 .map[b-6kaq7eao5j]{
-    width: 500px;
+    width: 100%;
     border: 10px dashed black;
     border-radius: 10px;
     background-color: palegreen;
@@ -135,6 +136,7 @@ table[b-6kaq7eao5j]{
     display: flex ;
 }
 .container[b-6kaq7eao5j]{
+    height: 100vh;
     margin: 10px;
     padding: 20px;
     background-color: aquamarine;
@@ -152,12 +154,13 @@ table[b-6kaq7eao5j]{
     width: 100%;
     display: flex;
     justify-content: center;
-    height: 50vh;
-    background-color: red
+    background-color: red;
+    flex-direction: column;
+    overflow-y: auto;
     
 }
 .mapHolder[b-6kaq7eao5j] {
-    width: 500px;
+    width: 100%;
     border: 10px dashed black;
     border-radius: 10px;
     background-color: palegreen;

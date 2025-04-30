@@ -14,6 +14,16 @@
         <div class="container file-upload">
             <InputFile OnChange="@Upload"/>
             <Calendar @ref="calendar"/>
+            @if(eventInfo != null){
+                <h2>@eventInfo[0].readerDescription</h2>
+                <ul class="data">
+                    @foreach(ReaderEvent readerEvent in eventInfo){
+                        <li>@readerEvent.idhash</li>
+                    }
+                </ul>
+                
+
+            }
         </div>
         <div class="container data-display">
             <div class="data">
@@ -26,7 +36,7 @@
                     @if(sortedReaders != null){
                         @foreach(List<ReaderEvent> sortedReader in sortedReaders ){
                             <tr>
-                                <td>@sortedReader[0].devid@sortedReader[0].machine</td>
+                                <td><button @onclick="() => displayEvent(sortedReader)">@sortedReader[0].devid@sortedReader[0].machine</button></td>
                                 <td>@sortedReader.Count</td>
                             </tr>
                             
@@ -101,6 +111,7 @@
     public long FileSize { get; set; }
     public string FileType { get; set; } = "";
     public DateTimeOffset LastModified { get; set; }
+    public List<ReaderEvent> eventInfo;
     const int MAX_FILESIZE = 5000 * 1024;
     public List<ReaderEvent> readerEvents = new List<ReaderEvent>();
     Dictionary<string, List<ReaderEvent>> eventDictionary = new Dictionary<string,List<ReaderEvent>>();
@@ -161,6 +172,10 @@
             }
         }
 
+    }
+    public void displayEvent(List<ReaderEvent> readerEvent){
+        eventInfo = readerEvent;
+        StateHasChanged();
     }
     public List<ReaderEvent>[] sortDictionaryByCount(Dictionary<string, List< ReaderEvent>> dictionary){
        List<ReaderEvent>[] unorderedReader = new List<ReaderEvent>[dictionary.Count];
@@ -240,12 +255,12 @@
         public void populatePanelDictionary(List<ReaderEvent> readerList){
             
             foreach(ReaderEvent readerEvent in readerList){
-                if (!panelDictionary.ContainsKey(readerEvent.devid)){
+                if (!panelDictionary.ContainsKey(readerEvent.machine)){
                     List<ReaderEvent> events = new List<ReaderEvent>();
                     events.Add(readerEvent);
-                    panelDictionary.Add(readerEvent.devid, events);
+                    panelDictionary.Add(readerEvent.machine, events);
                 }else{
-                    panelDictionary[readerEvent.devid].Add(readerEvent);
+                    panelDictionary[readerEvent.machine].Add(readerEvent);
                 }
             }
             
@@ -283,5 +298,6 @@
         public string idhash;
         public string devid;
         public string machine;
+       
     }
 }
