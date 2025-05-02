@@ -3,6 +3,8 @@ var markersGroup;
 var radius = 5;
 var i = 0;
 var editing = false;
+var placeIncrement = 0.00005;
+var originalIncrement=placeIncrement;
 
 
 function createMap(lat, long, zoom){
@@ -13,31 +15,7 @@ function createMap(lat, long, zoom){
     }).addTo(map);
     markersGroup = L.layerGroup();
     map.addLayer(markersGroup);
-    map.on('click', function(e){
-        if(editing)
-        {
-            if(massPlace){
-                
-            }else{
-                var circle = L.circle( e.latlng, {
-                    draggable: 'true',
-                    color: 'red',
-                    fillColor: '#f03',
-                    fillOpacity: 0.5,
-                    radius: radius
-                }).addTo(markersGroup);
-                circle.bindPopup("Location: "+ e.latlng).openPopup();
-                i = i+1;
-            //Circle 
-                circle.on('click', function(){
-                    map.removeLayer(circle);
-                });
-            }
-          
-            
-        }
-        return;
-    });
+    
     
 
 }
@@ -47,14 +25,25 @@ function setRadius(newRadius){
 function  toggleEditing(){
     editing = !editing;
 }
-function massPlace(e, id){
-    var circle = L.circle( e.latlng, {
+function massPlace(lat, long, id){
+    var latIncrement =0;
+    var longIncrement =0;
+    if(i%2 ==0 ){
+         latIncrement = placeIncrement;
+    }else{
+         longIncrement = placeIncrement;
+    }
+    var circle = L.marker( [lat + latIncrement, long +longIncrement], {
         draggable: 'true',
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,
         radius: radius
     }).addTo(markersGroup);
-    circle.bindPopup("Index: " +i +", "+id).openPopup();
+    var new_popup = L.popup({"autoClose": false, "closeOnClick": null});
+    new_popup.setContent("Index: " +i +", "+id);
+    circle.bindPopup(new_popup).openPopup();
+    //circle.bindPopup({"autoClose": false, "closeOnClick": null}).setContent( "Index: " +i +", "+id).openPopup();
     i = i+1;
+    placeIncrement += originalIncrement;
 }

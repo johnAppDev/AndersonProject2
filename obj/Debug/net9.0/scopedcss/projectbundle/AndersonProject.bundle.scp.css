@@ -113,7 +113,7 @@ main[b-9u07jejw9z] {
 .file-upload[b-6kaq7eao5j]{
     display: flex;
     flex-direction: column;
-   background-color: purple;
+   background-color: white;
    width: 100%;
 }
 table[b-6kaq7eao5j], th[b-6kaq7eao5j], td[b-6kaq7eao5j]{
@@ -128,7 +128,7 @@ table[b-6kaq7eao5j]{
     width: 100%;
     border: 10px dashed black;
     border-radius: 10px;
-    background-color: palegreen;
+    background-color: white;
     
 }
 
@@ -139,7 +139,7 @@ table[b-6kaq7eao5j]{
     height: 100vh;
     margin: 10px;
     padding: 20px;
-    background-color: aquamarine;
+    background-color: white;
     border: 10px solid black;
     border-radius: 10px;
     
@@ -157,7 +157,7 @@ table[b-6kaq7eao5j]{
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: red;
+    background-color: white;
     flex-direction: column;
     overflow-y: auto;
     
@@ -166,7 +166,7 @@ table[b-6kaq7eao5j]{
     width: 100%;
     border: 10px dashed black;
     border-radius: 10px;
-    background-color: palegreen;
+    background-color: white;
     display: flex;
     flex-direction: column;
 }

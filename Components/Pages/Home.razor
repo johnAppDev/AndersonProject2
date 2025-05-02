@@ -138,7 +138,6 @@
     Dictionary<string, List<ReaderEvent>> panelDictionary = new Dictionary<string,List<ReaderEvent>>();
     Dictionary<string, List<ReaderEvent>> userDictionary = new Dictionary<string,List<ReaderEvent>>();
     Dictionary<string, List<ReaderEvent>> timeDictionary = new Dictionary<string, List<ReaderEvent>>();
-
     public List<ReaderEvent>[]? sortedReaders;
     public List<ReaderEvent>[]? sortedPanels;
     public List<ReaderEvent>[]? sortedUsers;
@@ -148,11 +147,10 @@
     protected override async Task OnAfterRenderAsync(bool firstRender){
         if(firstRender){
              await JS.InvokeVoidAsync("createMap", 35.600291735954535, -97.6397232404786, 17);
-             //await JS.InvokeVoidAsync("addPin", 35.600291735954535, -97.6397232404786);
+             
         }
     }
     public void displayReaderInfo(){
-        
                IEnumerable<ReaderEvent> uniqueIds = from readerEvent in readerEvents
                                                                             where readerEvent.devid.Equals(unprocessedEventInfo[0].devid)
                                                                             where readerEvent.machine.Equals(unprocessedEventInfo[0].machine)
@@ -162,7 +160,6 @@
                 processedEventInfo = sortDictionaryByCount(uniqueIDDictionary);
                 calendar.DateDictionary = uniqueDateDictionary;
                 calendar.MostInteractions = sortDictionaryByCount(uniqueDateDictionary)[0].Count;
-            
         }
         public void displayUserInfo(){
               IEnumerable<ReaderEvent> uniqueIds = from readerEvent in readerEvents
@@ -191,10 +188,11 @@
         sortedTimes = sortDictionaryByCount(timeDictionary);
         calendar.DateDictionary = timeDictionary;
         calendar.MostInteractions =sortedTimes[0].Count;
+        await massPlace();
         StateHasChanged();
+
     }
-    public async Task FileUploaded(InputFileChangeEventArgs e){
-        
+    public async Task FileUploaded(InputFileChangeEventArgs e){      
         var browserFile = e.File;
         if(browserFile != null){
             Console.WriteLine("File is not null");
@@ -343,6 +341,11 @@
             await JS.InvokeVoidAsync("setRadius", e.Value);
         private async Task toggleEditing()=>
             await JS.InvokeVoidAsync("toggleEditing");
+        private async Task massPlace(){
+             foreach(List<ReaderEvent> readerList in sortedReaders){
+                await JS.InvokeVoidAsync("massPlace", 35.600291735954535, -97.6397232404786, readerList[0].readerDescription );
+                }   
+        }
         
     public class ReaderEvent{
         public ReaderEvent(string time, string location, string readerDescription, string idhash, string devid, string machine){
