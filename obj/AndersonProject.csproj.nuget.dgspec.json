@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/AndersonProject.csproj": {}
+    "/Users/coltenroberts/Desktop/Developer /AndersonProject2/AndersonProject.csproj": {}
   },
   "projects": {
-    "/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/AndersonProject.csproj": {
+    "/Users/coltenroberts/Desktop/Developer /AndersonProject2/AndersonProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/AndersonProject.csproj",
+        "projectUniqueName": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/AndersonProject.csproj",
         "projectName": "AndersonProject",
-        "projectPath": "/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/AndersonProject.csproj",
+        "projectPath": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/AndersonProject.csproj",
         "packagesPath": "/Users/coltenroberts/.nuget/packages/",
-        "outputPath": "/Users/coltenroberts/Desktop/AndersonProject2/AndersonProject/obj/",
+        "outputPath": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/coltenroberts/.nuget/NuGet/NuGet.Config"
@@ -68,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

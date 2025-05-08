@@ -4,10 +4,8 @@
 
 <div class="main">
     <div class="mapHolder" >
-        <input @onchange="setRadius"/>
-        <button @onclick="toggleEditing">Toggle Editing</button>
+        
         <div id = "map"></div>
-        <button>Save Panel and Reader configuration</button>
         
     </div>
     <div class="side-display">
@@ -109,7 +107,10 @@
                     @if(sortedUsers != null){
                         @foreach(List<ReaderEvent> sortedUser in sortedUsers ){
                             <tr>
+                                
                                    <td><button @onclick="() => displayEvent(sortedUser, 2)">@sortedUser[0].idhash</button></td>
+                                   
+                                   
                         
                                 <td>@sortedUser.Count</td>
                             </tr>
@@ -138,6 +139,7 @@
     Dictionary<string, List<ReaderEvent>> panelDictionary = new Dictionary<string,List<ReaderEvent>>();
     Dictionary<string, List<ReaderEvent>> userDictionary = new Dictionary<string,List<ReaderEvent>>();
     Dictionary<string, List<ReaderEvent>> timeDictionary = new Dictionary<string, List<ReaderEvent>>();
+    Dictionary<string, List<ReaderEvent>> locationDictionary = new Dictionary<string, List<ReaderEvent>>();
     public List<ReaderEvent>[]? sortedReaders;
     public List<ReaderEvent>[]? sortedPanels;
     public List<ReaderEvent>[]? sortedUsers;
@@ -337,13 +339,15 @@
             return userDictionary;
             
         }
-        private async Task setRadius(ChangeEventArgs e) => 
-            await JS.InvokeVoidAsync("setRadius", e.Value);
-        private async Task toggleEditing()=>
-            await JS.InvokeVoidAsync("toggleEditing");
+        //general map functions
         private async Task massPlace(){
-             foreach(List<ReaderEvent> readerList in sortedReaders){
-                await JS.InvokeVoidAsync("massPlace", 35.600291735954535, -97.6397232404786, readerList[0].readerDescription );
+            Dictionary<string, List<ReaderEvent>> results = readerEvents
+                .GroupBy(p => p.location)
+                .ToDictionary(g => g.Key, g => g.ToList());
+             locationDictionary = results;
+             List<ReaderEvent>[] locationsRanked = sortDictionaryByCount(locationDictionary);
+             foreach(List<ReaderEvent> location in locationsRanked){
+                await JS.InvokeVoidAsync("massPlace", 35.600291735954535, -97.6397232404786, location[0].location );
                 }   
         }
         
