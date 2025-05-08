@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BKEePoDmPAgVA/ESzF2aOyBzx3K9hw5ArwpQ28mQLPg=",
+  "Hash": "yK7W70YzRf4kEvpaRQCGBke8h9yHLSpnVhPPlzESdjA=",
   "Source": "AndersonProject",
   "BasePath": "_content/AndersonProject",
   "Mode": "Default",
@@ -4910,12 +4910,12 @@
       "OriginalItemSpec": "/Users/coltenroberts/.nuget/packages/syncfusion.blazor/29.1.37/staticwebassets/styles/material-dark.css"
     },
     {
-      "Identity": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-dnv995is9g.gz",
+      "Identity": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-q0azb9gnae.gz",
       "SourceId": "AndersonProject",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/",
       "BasePath": "_content/AndersonProject",
-      "RelativePath": "map#[.{fingerprint=dnv995is9g}]?.js.gz",
+      "RelativePath": "map#[.{fingerprint=q0azb9gnae}]?.js.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -4924,8 +4924,8 @@
       "RelatedAsset": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/wwwroot/map.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "jbv6lm8zi6",
-      "Integrity": "D3FOjNLtznJt/smg/+KwRNvAdkjwvOgWNK4sP2MdgDg=",
+      "Fingerprint": "qvr19dbylm",
+      "Integrity": "mo8mk1BvAm7VxXYLgVM47PyETigtMGhic2O2oExdVY4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/wwwroot/map.js"
@@ -7843,11 +7843,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "dnv995is9g",
-      "Integrity": "eQX6fIf3fCcnA6L+sIaiKYzhDaivjh/7P4SstfyyQmI=",
+      "Fingerprint": "q0azb9gnae",
+      "Integrity": "eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/map.js"
+    },
+    {
+      "Identity": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/wwwroot/Reader.png",
+      "SourceId": "AndersonProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/wwwroot/",
+      "BasePath": "_content/AndersonProject",
+      "RelativePath": "Reader#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "e6rd28poat",
+      "Integrity": "KkMRQLanDHDUKxaSVQDnCs8tzKSyYbAfUNRq9wVZ1es=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Reader.png"
     },
     {
       "Identity": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/wwwroot/whitebackground.png",
@@ -47059,13 +47080,13 @@
       ]
     },
     {
-      "Route": "map.dnv995is9g.js",
-      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-dnv995is9g.gz",
+      "Route": "map.js",
+      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-q0azb9gnae.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000868055556"
+          "Quality": "0.000753012048"
         }
       ],
       "ResponseHeaders": [
@@ -47075,19 +47096,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1151"
+          "Value": "1327"
         },
         {
           "Name": "ETag",
-          "Value": "\"D3FOjNLtznJt/smg/+KwRNvAdkjwvOgWNK4sP2MdgDg=\""
+          "Value": "\"mo8mk1BvAm7VxXYLgVM47PyETigtMGhic2O2oExdVY4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 08 May 2025 05:56:21 GMT"
+          "Value": "Thu, 08 May 2025 07:13:41 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -47103,26 +47124,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"eQX6fIf3fCcnA6L+sIaiKYzhDaivjh/7P4SstfyyQmI=\""
+          "Value": "W/\"eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "dnv995is9g"
-        },
-        {
-          "Name": "label",
-          "Value": "map.js"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-eQX6fIf3fCcnA6L+sIaiKYzhDaivjh/7P4SstfyyQmI="
+          "Value": "sha256-eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE="
         }
       ]
     },
     {
-      "Route": "map.dnv995is9g.js",
+      "Route": "map.js",
       "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/wwwroot/map.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -47132,7 +47145,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2677"
+          "Value": "3626"
         },
         {
           "Name": "Content-Type",
@@ -47140,11 +47153,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"eQX6fIf3fCcnA6L+sIaiKYzhDaivjh/7P4SstfyyQmI=\""
+          "Value": "\"eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 08 May 2025 05:56:21 GMT"
+          "Value": "Thu, 08 May 2025 07:13:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE="
+        }
+      ]
+    },
+    {
+      "Route": "map.js.gz",
+      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-q0azb9gnae.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1327"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mo8mk1BvAm7VxXYLgVM47PyETigtMGhic2O2oExdVY4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 08 May 2025 07:13:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mo8mk1BvAm7VxXYLgVM47PyETigtMGhic2O2oExdVY4="
+        }
+      ]
+    },
+    {
+      "Route": "map.q0azb9gnae.js",
+      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-q0azb9gnae.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000753012048"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1327"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mo8mk1BvAm7VxXYLgVM47PyETigtMGhic2O2oExdVY4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 08 May 2025 07:13:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "q0azb9gnae"
+        },
+        {
+          "Name": "label",
+          "Value": "map.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE="
+        }
+      ]
+    },
+    {
+      "Route": "map.q0azb9gnae.js",
+      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/wwwroot/map.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3626"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 08 May 2025 07:13:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -47154,7 +47312,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dnv995is9g"
+          "Value": "q0azb9gnae"
         },
         {
           "Name": "label",
@@ -47162,13 +47320,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-eQX6fIf3fCcnA6L+sIaiKYzhDaivjh/7P4SstfyyQmI="
+          "Value": "sha256-eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE="
         }
       ]
     },
     {
-      "Route": "map.dnv995is9g.js.gz",
-      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-dnv995is9g.gz",
+      "Route": "map.q0azb9gnae.js.gz",
+      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-q0azb9gnae.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -47177,7 +47335,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1151"
+          "Value": "1327"
         },
         {
           "Name": "Content-Type",
@@ -47185,11 +47343,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"D3FOjNLtznJt/smg/+KwRNvAdkjwvOgWNK4sP2MdgDg=\""
+          "Value": "\"mo8mk1BvAm7VxXYLgVM47PyETigtMGhic2O2oExdVY4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 08 May 2025 05:56:21 GMT"
+          "Value": "Thu, 08 May 2025 07:13:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -47207,7 +47365,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dnv995is9g"
+          "Value": "q0azb9gnae"
         },
         {
           "Name": "label",
@@ -47215,68 +47373,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-D3FOjNLtznJt/smg/+KwRNvAdkjwvOgWNK4sP2MdgDg="
+          "Value": "sha256-mo8mk1BvAm7VxXYLgVM47PyETigtMGhic2O2oExdVY4="
         }
       ]
     },
     {
-      "Route": "map.js",
-      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-dnv995is9g.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000868055556"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1151"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"D3FOjNLtznJt/smg/+KwRNvAdkjwvOgWNK4sP2MdgDg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 08 May 2025 05:56:21 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"eQX6fIf3fCcnA6L+sIaiKYzhDaivjh/7P4SstfyyQmI=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-eQX6fIf3fCcnA6L+sIaiKYzhDaivjh/7P4SstfyyQmI="
-        }
-      ]
-    },
-    {
-      "Route": "map.js",
-      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/wwwroot/map.js",
+      "Route": "Reader.e6rd28poat.png",
+      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/wwwroot/Reader.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -47285,35 +47388,43 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2677"
+          "Value": "169425"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/javascript"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"eQX6fIf3fCcnA6L+sIaiKYzhDaivjh/7P4SstfyyQmI=\""
+          "Value": "\"KkMRQLanDHDUKxaSVQDnCs8tzKSyYbAfUNRq9wVZ1es=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 08 May 2025 05:56:21 GMT"
+          "Value": "Thu, 08 May 2025 07:12:14 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "e6rd28poat"
+        },
+        {
+          "Name": "label",
+          "Value": "Reader.png"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-eQX6fIf3fCcnA6L+sIaiKYzhDaivjh/7P4SstfyyQmI="
+          "Value": "sha256-KkMRQLanDHDUKxaSVQDnCs8tzKSyYbAfUNRq9wVZ1es="
         }
       ]
     },
     {
-      "Route": "map.js.gz",
-      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-dnv995is9g.gz",
+      "Route": "Reader.png",
+      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/wwwroot/Reader.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -47322,37 +47433,29 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1151"
+          "Value": "169425"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/javascript"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"D3FOjNLtznJt/smg/+KwRNvAdkjwvOgWNK4sP2MdgDg=\""
+          "Value": "\"KkMRQLanDHDUKxaSVQDnCs8tzKSyYbAfUNRq9wVZ1es=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 08 May 2025 05:56:21 GMT"
+          "Value": "Thu, 08 May 2025 07:12:14 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
+          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-D3FOjNLtznJt/smg/+KwRNvAdkjwvOgWNK4sP2MdgDg="
+          "Value": "sha256-KkMRQLanDHDUKxaSVQDnCs8tzKSyYbAfUNRq9wVZ1es="
         }
       ]
     },

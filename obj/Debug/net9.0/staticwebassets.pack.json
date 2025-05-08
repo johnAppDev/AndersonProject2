@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets/Facility.png"
     },
     {
+      "Id": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/wwwroot/Reader.png",
+      "PackagePath": "staticwebassets/Reader.png"
+    },
+    {
       "Id": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/wwwroot/app.css",
       "PackagePath": "staticwebassets/app.css"
     },

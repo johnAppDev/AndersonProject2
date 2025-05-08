@@ -362,17 +362,34 @@
              foreach(List<ReaderEvent> location in locationsRanked){
                 if(storedLocations.ContainsKey("global") && storedLocations["global"].ContainsKey(location[0].location)){
                     MapItem mapItem = storedLocations["global"][location[0].location];
-                    await JS.InvokeVoidAsync("massPlace", 36, mapItem.longitude, mapItem.id);
+                    await JS.InvokeVoidAsync("massPlace", mapItem.lat, mapItem.longitude, mapItem.id, mapItem.layer);
                 }else{
-                    await JS.InvokeVoidAsync("massPlace", 35.600291735954535, -97.6397232404786, location[0].location );
+                    await JS.InvokeVoidAsync("massPlace", 35.600291735954535, -97.6397232404786, location[0].location, "global" );
                 }
                 
-                }   
+            }   
+        }
+        private async Task placeReaders(string location){/*
+            Dictionary<string, List<ReaderEvent>> results = locationDictionary[location]
+                .GroupBy(r => r.readerDescription)
+                .ToDictionary(g => g.Key, g => g.ToList());
+            results */
+            foreach(List<ReaderEvent> reader in sortedReaders){
+                if(storedLocations.ContainsKey(location) && storedLocations[location].ContainsKey(reader[0].readerDescription)){
+                    MapItem mapItem = storedLocations[location][reader[0].readerDescription];
+                    await JS.InvokeVoidAsync("massPlace", mapItem.lat, mapItem.longitude, mapItem.id, mapItem.layer);
+                }else{
+                    await JS.InvokeVoidAsync("massPlace", 0, 0, reader[0].readerDescription, location );
+                }
+                
+            }   
+                
         }
         [JSInvokable("SetMap")]
         public async Task setMapTo(string location){
             applyData(locationDictionary[location]);
             await JS.InvokeVoidAsync("setLocalMap");
+            await placeReaders(location);
             StateHasChanged();
         }
         [JSInvokable("storeLocation")]

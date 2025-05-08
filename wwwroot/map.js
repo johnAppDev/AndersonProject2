@@ -32,7 +32,7 @@ function createMap(lat, long, zoom, objectReference){
 
 map.on('drag', function(event) {
     map.panInsideBounds(bounds, { animate: false });
-    dotNetObject.invokeMethodAsync('storeLocation', event.target.id, "global", event.latLng.lat, event.latLng.lng);
+   // dotNetObject.invokeMethodAsync('storeLocation', event.target.id, "global", 36, 36);
 });
 
 function setLocalMap(){
@@ -45,31 +45,57 @@ function setLocalMap(){
     var bounds = [L.latLng(0, 0) ,L.latLng( 527, 740)]
     var image = L.imageOverlay('floor-plan.jpg', bounds)
     image.addTo(map)
+    map.addLayer(markersGroup);
 }
 
-function massPlace(lat, long, id){
-    dotNetObject.invokeMethodAsync('storeLocation', id, "global", lat, long);
-    var buildingIcon = L.icon({
-        iconUrl: 'facility.png',
-    
-        iconSize:     [50, 64], // size of the icon
-        shadowSize:   [50, 64], // size of the shadow
-        iconAnchor:   [25, 35], // point of the icon which will correspond to marker's location
-        shadowAnchor: [40, 62],  // the same for the shadow
-        popupAnchor:  [0, -10] // point from which the popup should open relative to the iconAnchor
-    });
+function massPlace(lat, long, id, layer){
+    console.log("Marker place on layer: " + layer);
+    dotNetObject.invokeMethodAsync('storeLocation', id, layer, lat, long);
+    var icon
+    if(layer != "global"){
+        icon = L.icon({
+            iconUrl: 'Reader.png',
+        
+            iconSize:     [50, 64], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [25, 35], // point of the icon which will correspond to marker's location
+            shadowAnchor: [40, 62],  // the same for the shadow
+            popupAnchor:  [0, -10] // point from which the popup should open relative to the iconAnchor
+        });
+    }else{
+        icon = L.icon({
+            iconUrl: 'facility.png',
+        
+            iconSize:     [50, 64], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [25, 35], // point of the icon which will correspond to marker's location
+            shadowAnchor: [40, 62],  // the same for the shadow
+            popupAnchor:  [0, -10] // point from which the popup should open relative to the iconAnchor
+        });
+    }
     var circle = L.marker( [lat, long ], {
         draggable: 'true',
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,
         radius: radius,
-        icon: buildingIcon,
+        icon: icon,
         buildingId: id
     })
     circle.on('click', function(event){
-        dotNetObject.invokeMethodAsync('SetMap', id);
+        if(layer != "global"){
+            dotNetObject.invokeMethodAsync('displayRelated', id);
+        }else{
+            dotNetObject.invokeMethodAsync('SetMap', id);
+        }
+        
     });
+    circle.on('dragend', function(event){
+        var marker = event.target;  // you could also simply access the marker through the closure
+        var result = marker.getLatLng();  // but using the passed event is cleaner
+        console.log(result);
+        dotNetObject.invokeMethodAsync('storeLocation', id, layer, result.lat, result.lng);
+    })
     circle.addTo(markersGroup);
     var new_popup = L.popup({"autoClose": false, "closeOnClick": false});
     new_popup.setContent(id);
