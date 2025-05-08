@@ -396,11 +396,13 @@
         }
         [JSInvokable("displayRelated")]
         public async Task displayRelated(string id){
-            Dictionary<string, List<ReaderEvent>> results = locationDictionary[location]
-                .GroupBy(d => d.readerDescription )
-                .ToDictionary(g => g.Key, g => g.ToList());
-            List<ReaderEvent> readersSortedByDescription = sortDictionaryByCount(results);
-            displayEvent(readersSortedByDescription, 1);
+            Console.WriteLine("This is the id i clicked on: " + id);
+            IEnumerable<ReaderEvent>results = from readerEvent in locationDictionary[location]
+                                              where readerEvent.readerDescription.Equals(id)
+                                            select readerEvent;
+
+            List<ReaderEvent> events = results.ToList<ReaderEvent>();
+            displayEvent(events, 1);
         }
         [JSInvokable("storeLocation")]
         public async Task storeLocation(string id, string layer, float lat, float longitude){
