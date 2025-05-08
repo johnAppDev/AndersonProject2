@@ -158,7 +158,7 @@
         }
     }
     public void displayReaderInfo(){
-               IEnumerable<ReaderEvent> uniqueIds = from readerEvent in readerEvents
+               IEnumerable<ReaderEvent> uniqueIds = from readerEvent in readerEvents//needs to be in context of LocationDictionary[location]
                                                                             where readerEvent.devid.Equals(unprocessedEventInfo[0].devid)
                                                                             where readerEvent.machine.Equals(unprocessedEventInfo[0].machine)
                                                                             select readerEvent;
@@ -169,7 +169,7 @@
                 calendar.MostInteractions = sortDictionaryByCount(uniqueDateDictionary)[0].Count;
         }
         public void displayUserInfo(){
-              IEnumerable<ReaderEvent> uniqueIds = from readerEvent in readerEvents
+              IEnumerable<ReaderEvent> uniqueIds = from readerEvent in readerEvents//needs to be adjusted to the local view 
                                                                             where readerEvent.idhash.Equals(unprocessedEventInfo[0].idhash)
                                                                             select readerEvent;
                 Dictionary<string, List<ReaderEvent>> uniqueReaderDictionary = populateReaderDictionary(uniqueIds.ToList<ReaderEvent>());
