@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yK7W70YzRf4kEvpaRQCGBke8h9yHLSpnVhPPlzESdjA=",
+  "Hash": "5jhRBj6mEMJvAJbUc/rSSQg7twpV8YDJEA9XukAPewg=",
   "Source": "AndersonProject",
   "BasePath": "_content/AndersonProject",
   "Mode": "Default",
@@ -4910,12 +4910,12 @@
       "OriginalItemSpec": "/Users/coltenroberts/.nuget/packages/syncfusion.blazor/29.1.37/staticwebassets/styles/material-dark.css"
     },
     {
-      "Identity": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-q0azb9gnae.gz",
+      "Identity": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-mfkbt4b6gy.gz",
       "SourceId": "AndersonProject",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/",
       "BasePath": "_content/AndersonProject",
-      "RelativePath": "map#[.{fingerprint=q0azb9gnae}]?.js.gz",
+      "RelativePath": "map#[.{fingerprint=mfkbt4b6gy}]?.js.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -4924,8 +4924,8 @@
       "RelatedAsset": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/wwwroot/map.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "qvr19dbylm",
-      "Integrity": "mo8mk1BvAm7VxXYLgVM47PyETigtMGhic2O2oExdVY4=",
+      "Fingerprint": "pqmj7pufh0",
+      "Integrity": "4QSmkZ2ume1v0AIh3a7ILyYpX2Mh7ZgNYWyx4Su8C4U=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/wwwroot/map.js"
@@ -7843,8 +7843,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "q0azb9gnae",
-      "Integrity": "eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE=",
+      "Fingerprint": "mfkbt4b6gy",
+      "Integrity": "zsaiX5VIT5atlzJXy+QxET1oBtGxzy9XpnDKYRnOSgQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/map.js"
@@ -47081,12 +47081,12 @@
     },
     {
       "Route": "map.js",
-      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-q0azb9gnae.gz",
+      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-mfkbt4b6gy.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000753012048"
+          "Quality": "0.000739644970"
         }
       ],
       "ResponseHeaders": [
@@ -47096,15 +47096,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1327"
+          "Value": "1351"
         },
         {
           "Name": "ETag",
-          "Value": "\"mo8mk1BvAm7VxXYLgVM47PyETigtMGhic2O2oExdVY4=\""
+          "Value": "\"4QSmkZ2ume1v0AIh3a7ILyYpX2Mh7ZgNYWyx4Su8C4U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 08 May 2025 07:13:41 GMT"
+          "Value": "Thu, 08 May 2025 07:17:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -47124,13 +47124,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE=\""
+          "Value": "W/\"zsaiX5VIT5atlzJXy+QxET1oBtGxzy9XpnDKYRnOSgQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE="
+          "Value": "sha256-zsaiX5VIT5atlzJXy+QxET1oBtGxzy9XpnDKYRnOSgQ="
         }
       ]
     },
@@ -47145,7 +47145,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3626"
+          "Value": "3761"
         },
         {
           "Name": "Content-Type",
@@ -47153,11 +47153,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE=\""
+          "Value": "\"zsaiX5VIT5atlzJXy+QxET1oBtGxzy9XpnDKYRnOSgQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 08 May 2025 07:13:41 GMT"
+          "Value": "Thu, 08 May 2025 07:17:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -47167,13 +47167,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE="
+          "Value": "sha256-zsaiX5VIT5atlzJXy+QxET1oBtGxzy9XpnDKYRnOSgQ="
         }
       ]
     },
     {
       "Route": "map.js.gz",
-      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-q0azb9gnae.gz",
+      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-mfkbt4b6gy.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -47182,7 +47182,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1327"
+          "Value": "1351"
         },
         {
           "Name": "Content-Type",
@@ -47190,11 +47190,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"mo8mk1BvAm7VxXYLgVM47PyETigtMGhic2O2oExdVY4=\""
+          "Value": "\"4QSmkZ2ume1v0AIh3a7ILyYpX2Mh7ZgNYWyx4Su8C4U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 08 May 2025 07:13:41 GMT"
+          "Value": "Thu, 08 May 2025 07:17:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -47212,18 +47212,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-mo8mk1BvAm7VxXYLgVM47PyETigtMGhic2O2oExdVY4="
+          "Value": "sha256-4QSmkZ2ume1v0AIh3a7ILyYpX2Mh7ZgNYWyx4Su8C4U="
         }
       ]
     },
     {
-      "Route": "map.q0azb9gnae.js",
-      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-q0azb9gnae.gz",
+      "Route": "map.mfkbt4b6gy.js",
+      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-mfkbt4b6gy.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000753012048"
+          "Quality": "0.000739644970"
         }
       ],
       "ResponseHeaders": [
@@ -47233,15 +47233,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1327"
+          "Value": "1351"
         },
         {
           "Name": "ETag",
-          "Value": "\"mo8mk1BvAm7VxXYLgVM47PyETigtMGhic2O2oExdVY4=\""
+          "Value": "\"4QSmkZ2ume1v0AIh3a7ILyYpX2Mh7ZgNYWyx4Su8C4U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 08 May 2025 07:13:41 GMT"
+          "Value": "Thu, 08 May 2025 07:17:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -47261,13 +47261,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE=\""
+          "Value": "W/\"zsaiX5VIT5atlzJXy+QxET1oBtGxzy9XpnDKYRnOSgQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "q0azb9gnae"
+          "Value": "mfkbt4b6gy"
         },
         {
           "Name": "label",
@@ -47275,12 +47275,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE="
+          "Value": "sha256-zsaiX5VIT5atlzJXy+QxET1oBtGxzy9XpnDKYRnOSgQ="
         }
       ]
     },
     {
-      "Route": "map.q0azb9gnae.js",
+      "Route": "map.mfkbt4b6gy.js",
       "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/wwwroot/map.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -47290,7 +47290,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3626"
+          "Value": "3761"
         },
         {
           "Name": "Content-Type",
@@ -47298,11 +47298,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE=\""
+          "Value": "\"zsaiX5VIT5atlzJXy+QxET1oBtGxzy9XpnDKYRnOSgQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 08 May 2025 07:13:41 GMT"
+          "Value": "Thu, 08 May 2025 07:17:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -47312,7 +47312,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "q0azb9gnae"
+          "Value": "mfkbt4b6gy"
         },
         {
           "Name": "label",
@@ -47320,13 +47320,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-eozNGSwFWV5A50xFgiG9E6m7vIb0VhU2elN/P51l5HE="
+          "Value": "sha256-zsaiX5VIT5atlzJXy+QxET1oBtGxzy9XpnDKYRnOSgQ="
         }
       ]
     },
     {
-      "Route": "map.q0azb9gnae.js.gz",
-      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-q0azb9gnae.gz",
+      "Route": "map.mfkbt4b6gy.js.gz",
+      "AssetFile": "/Users/coltenroberts/Desktop/Developer /AndersonProject2/obj/Debug/net9.0/compressed/gfnu4srxt2-mfkbt4b6gy.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -47335,7 +47335,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1327"
+          "Value": "1351"
         },
         {
           "Name": "Content-Type",
@@ -47343,11 +47343,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"mo8mk1BvAm7VxXYLgVM47PyETigtMGhic2O2oExdVY4=\""
+          "Value": "\"4QSmkZ2ume1v0AIh3a7ILyYpX2Mh7ZgNYWyx4Su8C4U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 08 May 2025 07:13:41 GMT"
+          "Value": "Thu, 08 May 2025 07:17:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -47365,7 +47365,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "q0azb9gnae"
+          "Value": "mfkbt4b6gy"
         },
         {
           "Name": "label",
@@ -47373,7 +47373,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-mo8mk1BvAm7VxXYLgVM47PyETigtMGhic2O2oExdVY4="
+          "Value": "sha256-4QSmkZ2ume1v0AIh3a7ILyYpX2Mh7ZgNYWyx4Su8C4U="
         }
       ]
     },

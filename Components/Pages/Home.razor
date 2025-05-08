@@ -126,6 +126,7 @@
 </div>
 @code{
     Calendar calendar;
+    string location;
     public int type;
     public string FileName { get; set; } = "";
     public long FileSize { get; set; }
@@ -388,9 +389,18 @@
         [JSInvokable("SetMap")]
         public async Task setMapTo(string location){
             applyData(locationDictionary[location]);
+            this.location = location;
             await JS.InvokeVoidAsync("setLocalMap");
             await placeReaders(location);
             StateHasChanged();
+        }
+        [JSInvokable("displayRelated")]
+        public async Task displayRelated(string id){
+            Dictionary<string, List<ReaderEvent>> results = locationDictionary[location]
+                .GroupBy(d => d.readerDescription )
+                .ToDictionary(g => g.Key, g => g.ToList());
+            List<ReaderEvent> readersSortedByDescription = sortDictionaryByCount(results);
+            displayEvent(readersSortedByDescription, 1);
         }
         [JSInvokable("storeLocation")]
         public async Task storeLocation(string id, string layer, float lat, float longitude){
